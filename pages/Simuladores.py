@@ -18,6 +18,7 @@ cufflinks.go_offline(connected=True)
 init_notebook_mode(connected=True)
 
 # Para el predictor
+import joblib
 import pycaret
 from pycaret.regression import *
 import pyperclip
@@ -164,7 +165,8 @@ if selected == 'Estimar el precio':
         Barrio = None
         
     # Cargar el modelo.
-    model = load_model('data/streamlit_modelo_copia')
+    model = joblib.load('data/streamlit_modelo_copia.pkl')
+
 
     # Da igual el precio que le demos porque lo sustituirá, pero le damos uno para que tenga la misma estructura que como fue entrenado.
     precio = 120000
