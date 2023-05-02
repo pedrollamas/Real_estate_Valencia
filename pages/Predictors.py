@@ -208,7 +208,7 @@ if selected == 'Estimar el precio':
         Barrio = None
         
     # Cargar el modelo.
-    
+    https://drive.google.com/uc?export=download&id={15JDyAif0ljtEcsxQXacIGWuqtyFPV9Hh}
     file_url = "https://drive.google.com/uc?export=download&id={15JDyAif0ljtEcsxQXacIGWuqtyFPV9Hh}"
     r = requests.get(file_url)
 
