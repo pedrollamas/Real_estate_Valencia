@@ -84,7 +84,7 @@ Adicionalmente, también he creado un simulador de hipotecas que permite a los u
 Con estos recursos, se busca facilitar la toma de decisiones a la hora de comprar o vender una propiedad en Valencia.""")
 
 with col2:
-    st.image("img\valencia.jpg")
+    st.image("img/valencia.jpg")
     
 
 col1, col2 = st.columns(2)
