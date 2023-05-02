@@ -24,6 +24,8 @@ import pyperclip
 # Los warnings
 import warnings
 warnings.filterwarnings('ignore')
+clf = setup(data, target='target', silent=True, experiment_name='/tmp/pycaret_experiment')
+
 
 #--------------------CONFIGURACIÓN DE LA PÁGINA----------------------------#
 st.set_page_config(page_title="Predictor", layout="wide", page_icon="🎯")
