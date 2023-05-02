@@ -111,29 +111,13 @@ if selected == 'Estimar el precio':
     Habitaciones = st.sidebar.slider('Habitaciones', 1, 16)
     Baños = st.sidebar.slider('Baños', 1, 12)
     Terraza = st.sidebar.selectbox('Terraza', ['No', 'Si'])
-    Ascensor = st.sidebar.selectbox('Ascensor', ['Si', 'No'])
-    Aire_Acondicionado = st.sidebar.selectbox('Aire acondicionado', ['No', 'Si'])
-    Servicios = valencia['Servicios'].mode()[0]
     Garaje = st.sidebar.selectbox('Garaje', ['No', 'Si'])
-    Garaje_en_Precio = 0
-    Precio_garaje = valencia['Precio_garaje'].median()
     orientacion = st.sidebar.selectbox('Orientación de la vivienda', ['Norte', 'Sur', 'Este', 'Oeste'])
-    Trastero = st.sidebar.selectbox('Trastero', ['No', 'Si'])
-    Armarios = st.sidebar.selectbox('Armarios', ['No', 'Si'])
-    Piscina = st.sidebar.selectbox('Piscina', ['No', 'Si'])
     Conserje = st.sidebar.selectbox('Conserje', ['No', 'Si'])
-    Jardín = st.sidebar.selectbox('Jardín', ['No', 'Si'])
-    Duplex = st.sidebar.selectbox('¿Se trata de un dúplex?', ['No', 'Si'])
-    Estudio = st.sidebar.selectbox('¿Se trata de un estudio?', ['No', 'Si'])
     Ático = st.sidebar.selectbox('¿Se trata de un ático?', ['No', 'Si'])
     Año_construcción = st.sidebar.slider('Año de construcción del edificio', 1890, 2021)
-    Calidad_suelo = valencia['Calidad_suelo'].mode()[0]
-    Plantas_máximas = st.sidebar.slider('Altura máxima del edificio', 1, 33)
-    Número_viviendas = st.sidebar.slider('Número de viviendas en el edificio', 1, 550)
-    Calidad_catastral = valencia['Calidad_catastral'].mode()[0]
     Distancia_centro = st.sidebar.slider('Distancia al centro de Valencia (km)', 0.0, 6.0, format="%.3f")
     Distancia_metro = st.sidebar.slider('Distancia al metro (km)', 0.0, 3.0, format="%.3f")
-    Distancia_Blasco = Distancia_centro - 0.02746035203476387
 
     # Creo una lista de los barrios.
     barrios = ['AIORA', 'ALBORS', 'ARRANCAPINS', 'BENICALAP', 'BENIFERRI', 'BENIMACLET',
@@ -160,14 +144,9 @@ if selected == 'Estimar el precio':
     # Filtrar el DataFrame por el barrio seleccionado
     barrio_df = valencia[valencia['Barrio'] == Barrio]
 
-    # Calcular la latitud y longitud media del barrio
-    Latitud = barrio_df['Latitud'].mean()
-    Longitud = barrio_df['Longitud'].mean()
         
     # Convertir los valores de entrada para predecir el modelo
     Terraza = 1 if Terraza == 'Si' else 0
-    Ascensor = 1 if Ascensor == 'Si' else 0
-    Aire_Acondicionado = 1 if Aire_Acondicionado == 'Si' else 0
     if orientacion == 'Norte':
         Orientación_norte = 1
         Orientación_sur = 0
@@ -190,13 +169,7 @@ if selected == 'Estimar el precio':
         Orientación_oeste = 1
 
     Garaje = 1 if Garaje == 'Si' else 0
-    Trastero = 1 if Trastero == 'Si' else 0
-    Armarios = 1 if Armarios == 'Si' else 0
-    Piscina = 1 if Piscina == 'Si' else 0
     Conserje = 1 if Conserje == 'Si' else 0
-    Jardín = 1 if Jardín == 'Si' else 0
-    Duplex = 1 if Duplex == 'Si' else 0
-    Estudio = 1 if Estudio == 'Si' else 0
     Ático = 1 if Ático == 'Si' else 0
 
     # Asigno el valor correspondiente al barrio seleccionado para el modelo.
@@ -213,11 +186,8 @@ if selected == 'Estimar el precio':
     precio = 120000
 
     # Convertir los valores de entrada en un formato adecuado.
-    X_new = [[precio,Metros_Construidos, Habitaciones, Baños, Terraza, Ascensor, Aire_Acondicionado, Servicios, Garaje,
-            Garaje_en_Precio, Precio_garaje, Orientación_norte, Orientación_sur, Orientación_este, Orientación_oeste,
-            Trastero, Armarios, Piscina, Conserje, Jardín, Duplex, Estudio, Ático, Año_construcción,
-            Calidad_suelo, Plantas_máximas, Número_viviendas, Calidad_catastral, Distancia_centro, Distancia_metro, 
-            Distancia_Blasco, Latitud, Longitud, Barrio]]
+    X_new = [[precio,Metros_Construidos, Habitaciones, Baños, Terraza, Garaje, Orientación_norte, Orientación_sur, Orientación_este, Orientación_oeste,
+            Conserje,Ático, Año_construcción, Distancia_centro, Distancia_metro, Barrio]]
 
 
     # Crear el diccionario de características.
