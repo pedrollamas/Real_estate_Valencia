@@ -4,27 +4,16 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 sns.set()
-import matplotlib.pyplot as plt
 import plotly.express as px
-from plotly.subplots import make_subplots
 
-import os
-import json
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Mapas interactivos
 import json
-import folium
-from streamlit_folium import st_folium, folium_static
 from streamlit_option_menu import option_menu
-from folium.plugins import FastMarkerCluster
-import geopandas as gpd
-from branca.colormap import LinearColormap
 
 # Gráficos de plotly
-import plotly.graph_objs as go
-import chart_studio.plotly as py
 from plotly.offline import iplot, init_notebook_mode
 import cufflinks
 cufflinks.go_offline(connected=True)
@@ -35,7 +24,6 @@ import warnings
 warnings.filterwarnings('ignore')
 
 from streamlit_extras.badges import badge
-from streamlit_extras.let_it_rain import rain
 
 #--------------------CONFIGURACIÓN DE LA PÁGINA----------------------------#
 st.set_page_config(page_title="EDA", layout="wide", page_icon="📊")
