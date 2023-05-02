@@ -68,7 +68,7 @@ selected = option_menu("Predictors", ["Estimar el precio", 'Simulador hipoteca']
 
 
 # Defino el dataframe para poder rellenar los valores fijos que no queremos que los usuarios pongan.
-valencia = pd.read_csv('data/encodeado_valencia.csv')
+valencia = pd.read_csv('data/streamlit_coded_valencia.csv')
 valencia.drop('Unnamed: 0', axis=1, inplace=True)
 
 if selected == 'Estimar el precio':
