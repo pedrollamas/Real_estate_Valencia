@@ -35,6 +35,7 @@ import joblib
 import pickle
 from pycaret.regression import *
 import pyperclip
+import requests
 
 # Los warnings
 import warnings
@@ -207,7 +208,14 @@ if selected == 'Estimar el precio':
         Barrio = None
         
     # Cargar el modelo.
-    model = load_model('data/Precios_vivienda_valencia')
+    https://drive.google.com/uc?export=download&id={15JDyAif0ljtEcsxQXacIGWuqtyFPV9Hh}
+    file_url = "https://drive.google.com/uc?export=download&id={15JDyAif0ljtEcsxQXacIGWuqtyFPV9Hh}"
+    r = requests.get(file_url)
+
+    with open("Precios_vivienda_valencia.pkl", "wb") as f:
+        f.write(r.content)
+    
+    model = load_model('Precios_vivienda_valencia.pkl')
 
     # Da igual el precio que le demos porque lo sustituirá, pero le damos uno para que tenga la misma estructura que como fue entrenado.
     precio = 120000
