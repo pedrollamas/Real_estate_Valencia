@@ -162,7 +162,7 @@ if selected == 'Estimar el precio':
         Barrio = None
         
     # Cargar el modelo.
-    model = load_model('data/streamlit_modelo_copia.pkl')
+    model = load_model('data/streamlit_modelo_copia')
 
     # Da igual el precio que le demos porque lo sustituirá, pero le damos uno para que tenga la misma estructura que como fue entrenado.
     precio = 120000
