@@ -10,3 +10,4 @@ streamlit_option_menu
 beautifulsoup4
 bs4
 urllib3
+joblib
