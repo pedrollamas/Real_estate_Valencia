@@ -9,5 +9,4 @@ streamlit_extras
 streamlit_option_menu
 beautifulsoup4
 bs4
-json
 urllib3
