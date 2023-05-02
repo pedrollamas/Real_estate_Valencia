@@ -18,13 +18,13 @@ cufflinks.go_offline(connected=True)
 init_notebook_mode(connected=True)
 
 # Para el predictor
+import pycaret
 from pycaret.regression import *
 import pyperclip
 
 # Los warnings
 import warnings
 warnings.filterwarnings('ignore')
-clf = setup(data, target='target', silent=True, experiment_name='/tmp/pycaret_experiment')
 
 
 #--------------------CONFIGURACIÓN DE LA PÁGINA----------------------------#
