@@ -18,7 +18,7 @@ cufflinks.go_offline(connected=True)
 init_notebook_mode(connected=True)
 
 # Para el predictor
-import urllib.request
+import pickle
 import joblib
 import pycaret
 from pycaret.regression import *
@@ -167,14 +167,8 @@ if selected == 'Estimar el precio':
     
 
 
-    model_url = 'https://raw.githubusercontent.com/pedrollamas/Real_estate_Valencia/streamlit_modelo_copia.pkl'
-
-    # Descargar el archivo del modelo
-    with urllib.request.urlopen(model_url) as response:
-        with open('streamlit_modelo_copia.pkl', 'wb') as f:
-            f.write(response.read())
-    # Cargar el modelo.
-    model = joblib.load('streamlit_modelo_copia.pkl')
+    with open('streamlit_modelo_copia.pkl', 'rb') as f:
+                model = pickle.load(f)
 
 
     # Da igual el precio que le demos porque lo sustituirá, pero le damos uno para que tenga la misma estructura que como fue entrenado.
