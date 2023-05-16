@@ -18,6 +18,7 @@ cufflinks.go_offline(connected=True)
 init_notebook_mode(connected=True)
 
 # Para el predictor
+import urllib.request
 import joblib
 import pycaret
 from pycaret.regression import *
