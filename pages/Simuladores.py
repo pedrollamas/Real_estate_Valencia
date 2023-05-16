@@ -18,6 +18,7 @@ cufflinks.go_offline(connected=True)
 init_notebook_mode(connected=True)
 
 # Para el predictor
+from pycaret.classification import load_model
 import pickle
 import joblib
 import pycaret
@@ -167,8 +168,7 @@ if selected == 'Estimar el precio':
     
 
 
-    with open('streamlit_modelo_copia.pkl', 'rb') as f:
-                model = pickle.load(f)
+    model = load_model('streamlit_modelo_copia')
 
 
     # Da igual el precio que le demos porque lo sustituirá, pero le damos uno para que tenga la misma estructura que como fue entrenado.
