@@ -163,7 +163,15 @@ if selected == 'Estimar el precio':
         Barrio = float(valor_barrio)
     else:
         Barrio = None
-        
+    
+
+
+    model_url = 'https://raw.githubusercontent.com/pedrollamas/Real_estate_Valencia/streamlit_modelo_copia.pkl'
+
+    # Descargar el archivo del modelo
+    with urllib.request.urlopen(model_url) as response:
+        with open('streamlit_modelo_copia.pkl', 'wb') as f:
+            f.write(response.read())
     # Cargar el modelo.
     model = joblib.load('streamlit_modelo_copia.pkl')
 
