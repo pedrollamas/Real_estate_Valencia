@@ -165,7 +165,7 @@ if selected == 'Estimar el precio':
         Barrio = None
         
     # Cargar el modelo.
-    model = joblib.load('data/streamlit_modelo_copia.pkl')
+    model = joblib.load('streamlit_modelo_copia.pkl')
 
 
     # Da igual el precio que le demos porque lo sustituirá, pero le damos uno para que tenga la misma estructura que como fue entrenado.
