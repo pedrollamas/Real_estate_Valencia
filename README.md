@@ -25,4 +25,6 @@ Este proyecto analiza el mercado de la vivienda en Valencia. Incluye un predicto
 ![streamlit](https://img.shields.io/badge/streamlit-%235869FF?style=for-the-badge&logo=streamlit&logoColor=white)
 
 ## Contacto
-
+  * 📬 Mándame un email at pedrollamaslopez@hotmail.com
+  * 👨‍💼🤝 Añádeme en Linkedin at https://www.linkedin.com/in/pedrollamaslopez/
+  * 👀 Si eres recruiter, aquí tienes una app que te interesará para facilitar tu trabajo https://pedrollamas-entrevistame-pedro-llamas-737gfx.streamlit.app/
