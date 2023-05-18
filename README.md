@@ -10,9 +10,10 @@ Este proyecto analiza el mercado de la vivienda en Valencia. Incluye un predicto
     * Simuladores: la aplicación de un modelo de Machine Learning para predecir precios. (es un modelo de ejemplo que me permitía subir a Github por tamaño, el más preciso lo tengo en local por si quieres pedírmelo)
 
 ## Principales librerías utilizadas
-![Pycaret](https://img.shields.io/badge/altair-%2300ADEF?style=for-the-badge&logo=altair&logoColor=white)
+![pycaret](https://img.shields.io/badge/pycaret-%23F69220?style=for-the-badge&logo=pycaret&logoColor=white)
+![plotly-express](https://img.shields.io/badge/plotly--express-%23412692?style=for-the-badge&logo=plotly&logoColor=white)
+![fast-ml](https://img.shields.io/badge/fast--ml-%23333333?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgdmlld0JveD0iMCAwIDE2MCAxNjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIj4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzEzNjM2MyIgc3R5bGU9ImZpbGw6cmVkOyIgLz4KPC9zdmc+Cg==)
 ![beautifulsoup4](https://img.shields.io/badge/beautifulsoup4-%2300BDC7?style=for-the-badge&logo=beautifulsoup4&logoColor=white)
-![Fastml](https://img.shields.io/badge/cachetools-%23FFD700?style=for-the-badge&logo=Fastml&logoColor=white)
 ![category-encoders](https://img.shields.io/badge/category--encoders-%23F37788?style=for-the-badge&logo=python&logoColor=white)
 ![folium](https://img.shields.io/badge/folium-%23000075?style=for-the-badge&logo=folium&logoColor=white)
 ![geopandas](https://img.shields.io/badge/geopandas-%23FF3E00?style=for-the-badge&logo=geopandas&logoColor=white)
