@@ -5,9 +5,9 @@ Este proyecto analiza el mercado de la vivienda en Valencia. Incluye un predicto
 ## Guía de uso
 * Acceder a la app de streamlit a través de este enlace   ➡️    https://pedrollamas-real-estate-valencia-inicio-y1ew2k.streamlit.app/
 * Encontrarás 3 páginas:
-    * Inicio: motivación para realizar el proyecto, información relevante y noticias que influyeron a la hora de realizarlo.
-    * EDA: aquí es donde se encuentra en Análisis Exploratorio de Datos con las explicaciones relevantes.
-    * Simuladores: la aplicación de un modelo de Machine Learning para predecir precios. (es un modelo de ejemplo que me permitía subir a Github por tamaño, el más preciso lo tengo en local por si quieres pedírmelo)
+    * 🏘️ Inicio: motivación para realizar el proyecto, información relevante y noticias que influyeron a la hora de realizarlo.
+    * 📊 EDA: aquí es donde se encuentra en Análisis Exploratorio de Datos con las explicaciones relevantes.
+    * 🎯 Simuladores: la aplicación de un modelo de Machine Learning para predecir precios. (es un modelo de ejemplo que me permitía subir a Github por tamaño, el más preciso lo tengo en local por si quieres pedírmelo)
 
 ## Principales librerías utilizadas
 ![pycaret](https://img.shields.io/badge/pycaret-%23F69220?style=for-the-badge&logo=pycaret&logoColor=white)
