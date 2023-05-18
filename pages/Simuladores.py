@@ -53,70 +53,8 @@ h1, h2, h3, h4, h5, h6 {
 
 selected = option_menu("Predictors", ["Estimar el precio", 'Simulador hipoteca'],icons=['currency-exchange', 'piggy-bank'], menu_icon="bullseye", default_index=1)
 
-# Debido a un error cargando el modelo vamos a entrenarlo e implementar aqui uno.
-
-# Cargamos el dataset quitando las columnas que no van a servir para entrenar el modelo.
-valencia = pd.read_csv("data/valencia_barrio_municipio.csv")
-valencia.drop('Municipio', axis =1, inplace=True)
-valencia.drop('Unnamed: 0', axis=1, inplace=True)
-valencia.drop('ID', axis=1, inplace=True)
-valencia.drop('Preciom2', axis=1, inplace=True)
-valencia.drop('Año_diseñado', axis=1, inplace=True)
-valencia.drop('Servicios', axis=1, inplace=True)
-valencia.drop('Garaje_en_Precio', axis=1, inplace=True)
-valencia.drop('Precio_garaje', axis=1, inplace=True)
-valencia.drop('Armarios', axis=1, inplace=True)
-valencia.drop('Jardín', axis=1, inplace=True)
-valencia.drop('Calidad_suelo', axis=1, inplace=True)
-valencia.drop('Plantas_máximas', axis=1, inplace=True)
-valencia.drop('Número_viviendas', axis=1, inplace=True)
-valencia.drop('Calidad_catastral', axis=1, inplace=True)
-valencia.drop('Distancia_Blasco', axis=1, inplace=True)
-valencia.drop('Trastero', axis=1, inplace=True)
-valencia.drop('Estudio', axis=1, inplace=True)
-valencia.drop('Duplex', axis=1, inplace=True)
-valencia.drop('Ascensor', axis=1, inplace=True)
-valencia.drop('Aire_Acondicionado', axis=1, inplace=True)
-valencia.drop('Piscina', axis=1, inplace=True)
-valencia.drop('Latitud', axis=1, inplace=True)
-valencia.drop('Longitud', axis=1, inplace=True)
-
-# Crea una copia del dataframe con las primeras 5000 filas para entrenar un modelo que ocupe menos espacio y usarlo en streamlit.
-valencia_copia = valencia.head(5000).copy()
-
-# Defino el encoder para encodear la columna de barrios
-le = LabelEncoder()
-
-# Lo aplicamos a nuestra columna sin encodear.
-valencia_copia['Barrio'] = le.fit_transform(valencia_copia['Barrio'])
-  
-# Defino la función para reemplazar outliers
-def replace_outliers(df, f=1.5):
-    # Select only numeric columns
-    numeric_cols = df.select_dtypes(include='number').columns
-    
-    Q1 = df[numeric_cols].quantile(0.25)
-    Q3 = df[numeric_cols].quantile(0.75)
-    IQR = Q3 - Q1
-    lower_bound = Q1 - f * IQR
-    upper_bound = Q3 + f * IQR
-    
-    for col in numeric_cols:
-        df.loc[df[col] < lower_bound[col], col] = lower_bound[col]
-        df.loc[df[col] > upper_bound[col], col] = upper_bound[col]
-    
-    return df
-# Aplico la función
-replace_outliers(valencia_copia)
-
-# Creamos nuestro setup con la columna objetivo
-setup = setup(valencia_copia, target='Precio', session_id=323)
-
-# Evaluamos los modelos para identificar el más preciso para nuestro caso.
-best = compare_models()
-
-# Finalizado el modelo.
-finalize_model(best)
+# Cargar el modelo guardado
+best = joblib.load('streamlit_modelo_copia.pkl')
 
 # Defino el dataframe para poder rellenar los valores fijos que no queremos que los usuarios pongan.
 valencia = pd.read_csv('data/streamlit_coded_valencia.csv')
