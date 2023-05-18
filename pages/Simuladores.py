@@ -53,8 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 selected = option_menu("Predictors", ["Estimar el precio", 'Simulador hipoteca'],icons=['currency-exchange', 'piggy-bank'], menu_icon="bullseye", default_index=1)
 
-# Cargar el modelo guardado
-best = joblib.load('streamlit_modelo_copia.pkl')
+
 
 # Defino el dataframe para poder rellenar los valores fijos que no queremos que los usuarios pongan.
 valencia = pd.read_csv('data/streamlit_coded_valencia.csv')
