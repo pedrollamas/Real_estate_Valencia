@@ -12,7 +12,7 @@ Este proyecto analiza el mercado de la vivienda en Valencia. Incluye un predicto
 ## Principales librerías utilizadas
 ![Pycaret](https://img.shields.io/badge/altair-%2300ADEF?style=for-the-badge&logo=altair&logoColor=white)
 ![beautifulsoup4](https://img.shields.io/badge/beautifulsoup4-%2300BDC7?style=for-the-badge&logo=beautifulsoup4&logoColor=white)
-![Fast-ml](https://img.shields.io/badge/cachetools-%23FFD700?style=for-the-badge&logo=cachetools&logoColor=white)
+![Fastml](https://img.shields.io/badge/cachetools-%23FFD700?style=for-the-badge&logo=Fastml&logoColor=white)
 ![category-encoders](https://img.shields.io/badge/category--encoders-%23F37788?style=for-the-badge&logo=python&logoColor=white)
 ![folium](https://img.shields.io/badge/folium-%23000075?style=for-the-badge&logo=folium&logoColor=white)
 ![geopandas](https://img.shields.io/badge/geopandas-%23FF3E00?style=for-the-badge&logo=geopandas&logoColor=white)
