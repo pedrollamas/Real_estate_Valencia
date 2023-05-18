@@ -234,13 +234,7 @@ if selected == 'Estimar el precio':
                 unsafe_allow_html=True
             )
     
-    predicted_price = best.predict(X_new_df)[0]        
-    # Crear un botón para que copie el precio.
-    if st.button("Copiar resultado"):
-        # Copiamos el valor de predicted_price al portapapeles del usuario
-        pyperclip.copy(predicted_price)
-        # Mostramos un mensaje de confirmación
-        st.success("¡Valor copiado al portapapeles!")
+
             
 if selected == 'Simulador hipoteca':
     container = st.container()
